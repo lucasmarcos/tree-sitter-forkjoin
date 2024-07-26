@@ -1,0 +1,6 @@
+===
+assign
+===
+l1 = l2;
+---
+(source_file (assign (label) (label)))
