@@ -13,9 +13,10 @@ module.exports = grammar({
       ";"),
     fork: $ => seq("FORK", $.label),
     join: $ => seq("JOIN", $.label, ",", $.label, ",", $.label),
-    assign: $ => seq($.label, "=", $.label),
+    assign: $ => seq($.label, "=", $.digit),
     call: $ => $.label,
     def: $ => seq($.label, ":"),
-    label: $ => /[a-zA-Z][a-zA-Z0-9]*/
+    label: $ => /[a-zA-Z][a-zA-Z0-9]*/,
+    digit: $ => /[0-9][0-9]*/
   }
 });

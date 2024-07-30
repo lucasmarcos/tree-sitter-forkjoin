@@ -1,6 +1,6 @@
 ===
 assign
 ===
-l1 = l2;
+l = 1;
 ---
-(source_file (assign (label) (label)))
+(source_file (assign (label) (digit)))
