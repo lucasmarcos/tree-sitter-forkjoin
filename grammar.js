@@ -20,7 +20,7 @@ module.exports = grammar({
     assign: $ => seq($.label, "=", $.digit),
     call: $ => $.label,
     def: $ => seq($.label, ":"),
-    label: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
+    label: $ => /[a-zA-Z_][a-zA-Z_0-9']*/,
     digit: $ => /[0-9][0-9]*/,
     comment: $ => seq("//", /.*/)
   }
