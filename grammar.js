@@ -1,5 +1,9 @@
 module.exports = grammar({
   name: "forkjoin",
+  extras: $ => [
+    /\s/,
+    $.comment
+  ],
   rules: {
     source_file: $ => repeat($._sttm),
     _sttm: $ => choice($._expr, $.def),
@@ -17,6 +21,7 @@ module.exports = grammar({
     call: $ => $.label,
     def: $ => seq($.label, ":"),
     label: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
-    digit: $ => /[0-9][0-9]*/
+    digit: $ => /[0-9][0-9]*/,
+    comment: $ => seq("//", /.*/)
   }
 });
